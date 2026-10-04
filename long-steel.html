@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Long Steel Products | Met Green Global</title>
+    <meta name="description" content="MetGreen Global long steel products — rebars, wire rods, structural merchant bars, beams, pipes, spring steel and railway tracks for construction and infrastructure." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .metal-hero {
+        position: relative;
+        background-image: url("metal-rebars.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 140px 11vw 100px;
+        color: #fff;
+      }
+      .metal-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, rgba(15,107,70,0.87) 0%, rgba(23,33,30,0.80) 100%);
+      }
+      .metal-hero > * { position: relative; }
+      .metal-hero .breadcrumb {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.55);
+        margin-bottom: 24px;
+      }
+      .metal-hero .breadcrumb a { color: #9fcf53; text-decoration: none; }
+      .metal-hero h1 {
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.08;
+        margin: 0 0 20px;
+        max-width: 660px;
+      }
+      .metal-hero p {
+        font-size: 1.1rem;
+        color: rgba(255,255,255,0.75);
+        max-width: 520px;
+        margin: 0;
+        line-height: 1.7;
+      }
+
+      .metal-stats {
+        background: #17211e;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+      .metal-stat {
+        padding: 32px 28px;
+        border-right: 1px solid rgba(255,255,255,0.08);
+        text-align: center;
+      }
+      .metal-stat:last-child { border-right: none; }
+      .metal-stat strong {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: #9fcf53;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .metal-stat span {
+        font-size: 0.8rem;
+        color: rgba(255,255,255,0.55);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .metal-section { padding: 80px 11vw; }
+      .metal-section:nth-child(odd) { background: #fff; }
+      .metal-section:nth-child(even) { background: #f5f6ef; }
+
+      .section-header { margin-bottom: 52px; }
+      .section-header h2 {
+        font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+        font-weight: 900;
+        color: #17211e;
+        margin: 0 0 14px;
+        line-height: 1.15;
+      }
+      .section-header p {
+        font-size: 1rem;
+        color: #64726d;
+        line-height: 1.75;
+        max-width: 100%;
+        margin: 0;
+        white-space: nowrap;
+      }
+      @media (max-width: 768px) {
+        .section-header p { white-space: normal; max-width: 100%; }
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .product-card {
+        background: #fff;
+        border-radius: 12px;
+        border: 1.5px solid #dde4df;
+        padding: 28px 24px;
+        transition: box-shadow 0.2s, border-color 0.2s;
+      }
+      .metal-section:nth-child(even) .product-card { background: #fff; }
+      .product-card:hover {
+        box-shadow: 0 8px 32px rgba(15,107,70,0.1);
+        border-color: #9fcf53;
+      }
+      .card-img {
+        width: 100%;
+        aspect-ratio: 7 / 4;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        display: block;
+      }
+      .product-card h3 {
+        font-size: 1rem;
+        font-weight: 800;
+        color: #17211e;
+        margin: 0 0 10px;
+      }
+      .product-card .grade-tag {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #0f6b46;
+        background: #dceee5;
+        border-radius: 4px;
+        padding: 3px 8px;
+        margin-bottom: 12px;
+      }
+      .product-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .product-card ul li {
+        font-size: 0.88rem;
+        color: #3a4a44;
+        padding-left: 16px;
+        position: relative;
+        line-height: 1.5;
+      }
+      .product-card ul li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        color: #9fcf53;
+        font-weight: 700;
+      }
+
+      .metal-cta {
+        background: #0f6b46;
+        padding: 72px 11vw;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 40px;
+      }
+      .metal-cta h2 {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        font-weight: 900;
+        color: #fff;
+        margin: 0 0 10px;
+      }
+      .metal-cta p {
+        font-size: 1rem;
+        color: rgba(255,255,255,0.75);
+        margin: 0;
+      }
+      .metal-cta .btn {
+        background: #9fcf53;
+        color: #17211e;
+        white-space: nowrap;
+        text-decoration: none;
+        padding: 16px 32px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        display: inline-block;
+        transition: background 0.2s;
+      }
+      .metal-cta .btn:hover { background: #b5dd6a; }
+
+      @media (max-width: 900px) {
+        .metal-stats { grid-template-columns: repeat(2, 1fr); }
+        .product-grid { grid-template-columns: repeat(2, 1fr); }
+        .metal-section { padding: 56px 6vw; }
+        .metal-hero { padding: 100px 6vw 70px; }
+        .metal-cta { grid-template-columns: 1fr; padding: 56px 6vw; }
+      }
+      @media (max-width: 600px) {
+        .product-grid { grid-template-columns: 1fr; }
+        .metal-stats { grid-template-columns: repeat(2, 1fr); }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Page transition loader -->
+    <div id="page-loader" aria-hidden="true">
+      <div class="loader-logo">
+        <img src="logo-icon-transparent.png" alt="MetGreen Global logo" />
+        <div class="loader-wordmark">
+          <strong>MetGreen</strong>
+          <small>Global</small>
+        </div>
+      </div>
+      <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
+    </div>
+
+    <header class="topbar">
+      <a class="logo" href="index.html" aria-label="Met Green Global home">
+        <img class="logo-mark" src="metgreen-logo-footer.png" alt="Met Green Global FZE" />
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="product.html" class="active-page">Product</a>
+        <a href="about.html">About</a>
+        <a class="nav-contact" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- Hero -->
+      <section class="metal-hero">
+        <p class="breadcrumb">
+          <a href="index.html">Home</a> &rsaquo;
+          <a href="product.html">Products</a> &rsaquo;
+          Long Steel Products
+        </p>
+        <h1>Long Steel Products</h1>
+        <p>A full range of rebars, beams, wire rods, and structural sections for construction and infrastructure projects globally.</p>
+      </section>
+
+      <!-- Stats -->
+      <div class="metal-stats">
+        <div class="metal-stat">
+          <strong>9+</strong>
+          <span>Product Types</span>
+        </div>
+        <div class="metal-stat">
+          <strong>ASTM</strong>
+          <span>Graded Material</span>
+        </div>
+        <div class="metal-stat">
+          <strong>Global</strong>
+          <span>Trade Routes</span>
+        </div>
+        <div class="metal-stat">
+          <strong>100%</strong>
+          <span>Documented Supply</span>
+        </div>
+      </div>
+
+      <!-- Section: Long Steel Products -->
+      <section class="metal-section" id="long-steel-grades">
+        <div class="section-header">
+          <h2>Long Steel Product Range</h2>
+          <p>A full range of rebars, beams, wire rods, and structural sections for construction and infrastructure projects globally.</p>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="metal-rebars.jpg" alt="Rebars" class="card-img" />
+            <h3>Rebars</h3>
+            <span class="grade-tag">ASTM A615 · BS4449 · IS 1786</span>
+            <ul>
+              <li>Diameter 6mm – 50mm</li>
+              <li>Reinforced concrete structures</li>
+              <li>Buildings, bridges &amp; infrastructure</li>
+            </ul>
+          </div>
+          <div class="product-card">
+            <img src="metal-wire-rods.jpg" alt="Wire Rods" class="card-img" />
+            <h3>Wire Rods</h3>
+            <span class="grade-tag">SAE 1006 · SAE 1008 · SAE 1018</span>
+            <ul>
+              <li>Diameter 5.5mm – 16mm</li>
+              <li>Wire drawing and fastener production</li>
+              <li>Welding wire and mesh applications</li>
+            </ul>
+          </div>
+          <div class="product-card">
+            <img src="metal-pc-wire-strand.jpg" alt="PC Wire and Strand" class="card-img" />
+            <h3>PC Wire &amp; Strand</h3>
+            <span class="grade-tag">High Tensile · Low Relaxation</span>
+            <ul>
+              <li>1570MPa – 1860MPa strength</li>
+              <li>Prestressed concrete structures</li>
+              <li>Bridges and railway sleepers</li>
+            </ul>
+          </div>
+          <div class="product-card">
+            <img src="metal-structural-bars.jpg" alt="Structural Merchant Bars" class="card-img" />
+            <h3>Structural Merchant Bars</h3>
+            <span class="grade-tag">Angles · Flats · Rounds · Tees</span>
+            <ul>
+              <li>Profiles 20mm – 300mm</li>
+              <li>Construction and fabrication</li>
+              <li>Equal and unequal angle sections</li>
+            </ul>
+          </div>
+          <div class="product-card">
+            <img src="metal-bright-bars.jpg" alt="Bright Bars and Precision Bars" class="card-img" />
+            <h3>Bright &amp; Precision Bars</h3>
+            <span class="grade-tag">EN8 · EN19 · C45 · 1045</span>
+            <ul>
+              <li>Cold-drawn, high-precision finish</li>
+              <li>Machining and automotive parts</li>
+              <li>Round, hex, and flat profiles</li>
+            </ul>
+          </div>
+          <div class="product-card">
+            <img src="metal-beams-channels.jpg" alt="Steel Sections Beams Channels" class="card-img" />
+            <h3>Steel Sections (Beams/Channels)</h3>
+            <span class="grade-tag">I-Beams · H-Beams · U-Channels</span>
+            <ul>
+              <li>Heavy structural applications</li>
+              <li>Bridges and high-rise buildings</li>
+              <li>Universal beams and columns</li>
+            </ul>
+          </div>
+          <div class="product-card">
+            <img src="metal-pipes-hollow.jpg" alt="Steel Pipes and Hollow Sections" class="card-img" />
+            <h3>Steel Pipes &amp; Hollow Sections</h3>
+            <span class="grade-tag">API 5L · ASTM A53 · EN 10219</span>
+            <ul>
+              <li>Diameter 15mm – 500mm</li>
+              <li>Seamless and welded options</li>
+              <li>Square, rectangular &amp; circular hollow</li>
+            </ul>
+          </div>
+          <div class="product-card">
+            <img src="metal-spring-steel.jpg" alt="Spring Steel and Alloy Steel Bars" class="card-img" />
+            <h3>Spring Steel &amp; Alloy Steel Bars</h3>
+            <span class="grade-tag">SUP9 · SUP10 · 50CrV4</span>
+            <ul>
+              <li>Automotive suspension systems</li>
+              <li>Heavy machinery and tooling</li>
+              <li>High fatigue resistance</li>
+            </ul>
+          </div>
+          <div class="product-card">
+            <img src="metal-railway-tracks.jpg" alt="Railway and Crane Tracks" class="card-img" />
+            <h3>Railway &amp; Crane Tracks</h3>
+            <span class="grade-tag">UIC 54 · UIC 60 · CR73</span>
+            <ul>
+              <li>Railway and metro systems</li>
+              <li>Heavy-duty crane operations</li>
+              <li>High-strength wear-resistant steel</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="metal-cta">
+        <div>
+          <h2>Need long steel products at scale?</h2>
+          <p>Talk to our metals trading desk for pricing, documentation, and logistics support.</p>
+        </div>
+        <a class="btn" href="contact.html">Contact Us</a>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="logo" href="index.html" aria-label="Met Green Global home">
+            <img class="logo-mark" src="metgreen-logo-footer.png" alt="Met Green Global FZE" />
+          </a>
+          <p class="footer-tagline">Moving Materials. Building Futures.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li>MetGreen Global<br/>Global recycling &amp; commodity trading</li>
+            <li>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=metgreenglobalfze@gmail.com" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                metgreenglobalfze@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://metgreenglobal.com" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                metgreenglobal.com
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Let's Connect</h4>
+          <form class="footer-newsletter-form" onsubmit="return false;">
+            <input type="text" placeholder="Type your query" aria-label="Your query" />
+            <button type="submit" aria-label="Send query">
+              <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://wa.me/971554835509" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.28 2 2 8.28 2 16c0 2.46.67 4.88 1.95 7.02L2 30l7.18-1.88A13.94 13.94 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.5c-2.2 0-4.35-.6-6.22-1.72l-.45-.27-4.26 1.12 1.13-4.14-.3-.47A11.44 11.44 0 0 1 4.5 16C4.5 9.6 9.6 4.5 16 4.5S27.5 9.6 27.5 16 22.4 27.5 16 27.5zm6.27-8.55c-.34-.17-2.03-1-2.35-1.12-.32-.11-.55-.17-.78.17-.23.34-.9 1.12-1.1 1.35-.2.23-.4.26-.74.09-.34-.17-1.44-.53-2.74-1.69-1.01-.9-1.7-2.01-1.9-2.35-.2-.34-.02-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.78-1.88-1.07-2.57-.28-.67-.57-.58-.78-.59H9.8c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.42 3.7 5.87 5.19.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.13.66-.1 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.08-.14-.31-.23-.65-.4z"/></svg>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=metgreenglobalfze@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 MetGreen Global. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.querySelectorAll(".card-img").forEach(function(img) {
+        img.onerror = function() {
+          this.onerror = null;
+          this.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+          this.style.background = "linear-gradient(135deg, #dceee5 0%, #b5dd6a 100%)";
+        };
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact MetGreen Global — get in touch for recycling and commodity trade enquiries." />
+    <title>Contact | Met Green Global</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ── Contact hero ── */
+      .contact-hero {
+        position: relative;
+        background-image: url("rubber-granules.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 140px 11vw 100px;
+        color: #fff;
+      }
+      .contact-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, rgba(15,107,70,0.88) 0%, rgba(23,33,30,0.75) 100%);
+      }
+      .contact-hero > * { position: relative; }
+      .contact-hero .breadcrumb {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.55);
+        margin-bottom: 24px;
+      }
+      .contact-hero .breadcrumb a { color: #9fcf53; text-decoration: none; }
+      .contact-hero h1 {
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin: 0 0 20px;
+        max-width: 680px;
+      }
+      .contact-hero p {
+        font-size: 1.1rem;
+        color: rgba(255,255,255,0.75);
+        max-width: 880px;
+        margin: 0;
+        line-height: 1.7;
+      }
+      .contact-hero .hero-office {
+        margin-top: 32px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        color: #fff;
+        backdrop-filter: blur(6px);
+      }
+      .contact-hero .hero-office svg {
+        width: 18px; height: 18px;
+        stroke: #9fcf53; fill: none;
+        stroke-width: 2; stroke-linecap: round;
+      }
+
+      /* ── Info strip ── */
+      .contact-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        background: #0f6b46;
+      }
+      .contact-strip-item {
+        padding: 40px 36px;
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        border-right: 1px solid rgba(255,255,255,0.12);
+      }
+      .contact-strip-item:last-child { border-right: none; }
+      .strip-icon {
+        width: 48px; height: 48px;
+        background: rgba(255,255,255,0.12);
+        border-radius: 10px;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+      }
+      .strip-icon svg {
+        width: 22px; height: 22px;
+        stroke: #9fcf53; fill: none;
+        stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      }
+      .strip-text h4 {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #9fcf53;
+        margin: 0 0 6px;
+      }
+      .strip-text p, .strip-text a {
+        font-size: 0.95rem;
+        color: #fff;
+        margin: 0;
+        line-height: 1.6;
+        text-decoration: none;
+      }
+      .strip-text a:hover { color: #fff; }
+
+      /* ── Main contact section ── */
+      .contact-main {
+        padding: 80px 11vw;
+        background: #f5f6ef;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Left column */
+      .contact-left h2 {
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        font-weight: 900;
+        color: #17211e;
+        margin: 0 0 16px;
+        line-height: 1.15;
+      }
+      .contact-left > p {
+        font-size: 1rem;
+        color: #64726d;
+        line-height: 1.7;
+        margin: 0 0 40px;
+      }
+
+      .contact-detail-list { list-style: none; padding: 0; margin: 0 0 40px; display: flex; flex-direction: column; gap: 20px; }
+      .contact-detail-list li {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .detail-icon {
+        width: 42px; height: 42px;
+        background: #dceee5;
+        border-radius: 10px;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+      }
+      .detail-icon svg {
+        width: 18px; height: 18px;
+        stroke: #0f6b46; fill: none;
+        stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      }
+      .detail-text strong {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #0f6b46;
+        margin-bottom: 3px;
+      }
+      .detail-text span, .detail-text a {
+        font-size: 0.95rem;
+        color: #3a4a44;
+        text-decoration: none;
+        line-height: 1.5;
+      }
+      .detail-text a:hover { color: #0f6b46; }
+
+      /* Membership badge */
+      .membership-badge {
+        background: #fff;
+        border-radius: 12px;
+        padding: 22px 24px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        box-shadow: 0 4px 20px rgba(23,33,30,0.06);
+        border-left: 4px solid #9fcf53;
+      }
+      .membership-badge .badge-icon {
+        font-size: 2rem;
+        line-height: 1;
+      }
+      .membership-badge h5 {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #0f6b46;
+        margin: 0 0 4px;
+      }
+      .membership-badge p {
+        font-size: 0.88rem;
+        color: #64726d;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      /* Social row */
+      .contact-socials {
+        margin-top: 32px;
+        display: flex;
+        gap: 12px;
+      }
+      .contact-socials a {
+        width: 44px; height: 44px;
+        border-radius: 10px;
+        background: #0f6b46;
+        display: flex; align-items: center; justify-content: center;
+        transition: background 0.2s;
+      }
+      .contact-socials a:hover { background: #9fcf53; }
+      .contact-socials svg {
+        width: 18px; height: 18px;
+        stroke: #fff; fill: none;
+        stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      }
+      .contact-socials .wa-svg { stroke: none; fill: #fff; width: 20px; height: 20px; }
+
+      .contact-left { display: none; }
+
+      /* Form card — centered */
+      .contact-form-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 56px 52px;
+        box-shadow: 0 8px 48px rgba(23,33,30,0.09);
+        width: 100%;
+        max-width: 680px;
+      }
+      .contact-form-card h2 {
+        font-size: 1.7rem;
+        font-weight: 900;
+        color: #17211e;
+        margin: 0 0 6px;
+      }
+      .contact-form-card > p {
+        font-size: 0.95rem;
+        color: #64726d;
+        margin: 0 0 36px;
+        line-height: 1.6;
+      }
+      .contact-form-card .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .contact-form-card label {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #3a4a44;
+        margin-bottom: 16px;
+      }
+      .contact-form-card input,
+      .contact-form-card select,
+      .contact-form-card textarea {
+        width: 100%;
+        padding: 13px 16px;
+        border: 1.5px solid #dde4df;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        color: #17211e;
+        background: #f9faf9;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        font-family: inherit;
+      }
+      .contact-form-card input:focus,
+      .contact-form-card select:focus,
+      .contact-form-card textarea:focus {
+        border-color: #0f6b46;
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(15,107,70,0.1);
+      }
+      .contact-form-card textarea { resize: vertical; min-height: 130px; }
+      .contact-form-card .btn {
+        margin-top: 8px;
+        width: 100%;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 16px;
+        letter-spacing: 0.04em;
+      }
+      .form-status {
+        margin-top: 12px;
+        font-size: 0.9rem;
+        color: #0f6b46;
+        font-weight: 600;
+        min-height: 1.2em;
+        text-align: center;
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 900px) {
+        .contact-strip { grid-template-columns: 1fr; }
+        .contact-strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+        .contact-strip-item:last-child { border-bottom: none; }
+        .contact-main { grid-template-columns: 1fr; gap: 48px; padding: 56px 6vw; }
+        .contact-form-card { padding: 32px 24px; }
+        .contact-form-card .form-row { grid-template-columns: 1fr; }
+        .contact-hero { padding: 100px 6vw 70px; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page transition loader -->
+    <div id="page-loader" aria-hidden="true">
+      <div class="loader-logo">
+        <img src="logo-icon-transparent.png" alt="MetGreen Global logo" />
+        <div class="loader-wordmark">
+          <strong>MetGreen</strong>
+          <small>Global</small>
+        </div>
+      </div>
+      <div class="loader-bar"></div>
+    </div>
+
+    <header class="topbar">
+      <a class="logo" href="index.html" aria-label="Met Green Global home">
+        <img class="logo-mark" src="metgreen-logo-footer.png" alt="Met Green Global FZE" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="about.html">About</a>
+        <a class="nav-contact active-page" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- Hero -->
+      <section class="contact-hero">
+        <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Contact</p>
+        <h1>We're Here to Connect, Trade &amp; Grow Together</h1>
+        <p>Expanding our reach across continents. Reach out to us for sourcing, selling, or partnership enquiries.</p>
+      </section>
+
+      <!-- Info strip -->
+      <div class="contact-strip">
+        <div class="contact-strip-item">
+          <div class="strip-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="strip-text">
+            <h4>Business Hours</h4>
+            <p>Mon – Fri &nbsp;9:00 AM – 6:00 PM<br/>Weekend Closed</p>
+          </div>
+        </div>
+        <div class="contact-strip-item">
+          <div class="strip-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <div class="strip-text">
+            <h4>Email Us</h4>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=metgreenglobalfze@gmail.com" target="_blank" rel="noopener noreferrer">metgreenglobalfze@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-strip-item">
+          <div class="strip-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="strip-text">
+            <h4>Website</h4>
+            <a href="https://metgreenglobal.com" target="_blank" rel="noopener noreferrer">metgreenglobal.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main: info + form -->
+      <section class="contact-main">
+
+        <!-- Left -->
+        <div class="contact-left">
+          <h2>Say Hello</h2>
+          <p>For any enquiries, including buying, selling, logistics, or partnerships, please reach out. Our team typically responds within 24 hours.</p>
+
+          <ul class="contact-detail-list">
+            <li>
+              <div class="detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="detail-text">
+                <strong>Address</strong>
+                <span>MetGreen Global<br/>Dubai, UAE</span>
+              </div>
+            </li>
+            <li>
+              <div class="detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              </div>
+              <div class="detail-text">
+                <strong>Email</strong>
+                <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=metgreenglobalfze@gmail.com" target="_blank" rel="noopener noreferrer">metgreenglobalfze@gmail.com</a>
+              </div>
+            </li>
+            <li>
+              <div class="detail-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div class="detail-text">
+                <strong>Website</strong>
+                <a href="https://metgreenglobal.com" target="_blank" rel="noopener noreferrer">metgreenglobal.com</a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="membership-badge">
+            <div class="badge-icon">♻️</div>
+            <div>
+              <h5>Industry Member</h5>
+              <p>Global recycling &amp; commodity trade: rubber, paper, ferrous &amp; non-ferrous metals</p>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://wa.me/971554835509" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg class="wa-svg" viewBox="0 0 32 32"><path d="M16 2C8.28 2 2 8.28 2 16c0 2.46.67 4.88 1.95 7.02L2 30l7.18-1.88A13.94 13.94 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.5c-2.2 0-4.35-.6-6.22-1.72l-.45-.27-4.26 1.12 1.13-4.14-.3-.47A11.44 11.44 0 0 1 4.5 16C4.5 9.6 9.6 4.5 16 4.5S27.5 9.6 27.5 16 22.4 27.5 16 27.5zm6.27-8.55c-.34-.17-2.03-1-2.35-1.12-.32-.11-.55-.17-.78.17-.23.34-.9 1.12-1.1 1.35-.2.23-.4.26-.74.09-.34-.17-1.44-.53-2.74-1.69-1.01-.9-1.7-2.01-1.9-2.35-.2-.34-.02-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.78-1.88-1.07-2.57-.28-.67-.57-.58-.78-.59H9.8c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.42 3.7 5.87 5.19.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.13.66-.1 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.08-.14-.31-.23-.65-.4z"/></svg>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=metgreenglobalfze@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right — form -->
+        <div class="contact-form-card">
+          <h2>Get in Touch</h2>
+          <p>Tell us what you're looking to buy or sell and we'll get back to you within 24 hours.</p>
+          <form id="quote-form">
+            <div class="form-row">
+              <label>
+                Your Name
+                <input type="text" name="name" placeholder="Full name" required />
+              </label>
+              <label>
+                Mobile Number
+                <input type="tel" name="phone" placeholder="+971 000 000 0000" />
+              </label>
+            </div>
+            <label>
+              Email Address
+              <input type="email" name="email" placeholder="you@company.com" required />
+            </label>
+            <label>
+              Material Category
+              <select name="category" required>
+                <option value="">Select material</option>
+                <option>Rubber</option>
+                <option>Paper</option>
+                <option>Ferrous Metals</option>
+                <option>Non-Ferrous Metals</option>
+                <option>Battery</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="5" placeholder="Product, quantity, origin, destination, timeline…"></textarea>
+            </label>
+            <button class="btn dark" type="submit">Send Message</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Footer (same as About page) -->
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="logo" href="index.html" aria-label="Met Green Global home">
+            <img class="logo-mark" src="metgreen-logo-footer.png" alt="Met Green Global FZE" />
+          </a>
+          <p class="footer-tagline">Moving Materials. Building Futures.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li>MetGreen Global<br/>Global recycling &amp; commodity trading</li>
+            <li>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=metgreenglobalfze@gmail.com" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                metgreenglobalfze@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://metgreenglobal.com" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                metgreenglobal.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Let's Connect</h4>
+          <form class="footer-newsletter-form" onsubmit="return false;">
+            <input type="text" placeholder="Type your query" aria-label="Your query" />
+            <button type="submit" aria-label="Send query">
+              <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://wa.me/971554835509" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.28 2 2 8.28 2 16c0 2.46.67 4.88 1.95 7.02L2 30l7.18-1.88A13.94 13.94 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.5c-2.2 0-4.35-.6-6.22-1.72l-.45-.27-4.26 1.12 1.13-4.14-.3-.47A11.44 11.44 0 0 1 4.5 16C4.5 9.6 9.6 4.5 16 4.5S27.5 9.6 27.5 16 22.4 27.5 16 27.5zm6.27-8.55c-.34-.17-2.03-1-2.35-1.12-.32-.11-.55-.17-.78.17-.23.34-.9 1.12-1.1 1.35-.2.23-.4.26-.74.09-.34-.17-1.44-.53-2.74-1.69-1.01-.9-1.7-2.01-1.9-2.35-.2-.34-.02-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.78-1.88-1.07-2.57-.28-.67-.57-.58-.78-.59H9.8c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.42 3.7 5.87 5.19.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.13.66-.1 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.08-.14-.31-.23-.65-.4z"/></svg>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=metgreenglobalfze@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 MetGreen Global. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      const form = document.getElementById("quote-form");
+      const status = form.querySelector(".form-status");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = form.elements.email.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          status.textContent = "Please enter a valid email address.";
+          return;
+        }
+        status.textContent = "Thank you! We'll be in touch within 24 hours.";
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battery | Met Green Global</title>
+    <meta name="description" content="MetGreen Global recycled battery products — lead-acid scrap batteries sourced, graded, and traded for global recycling markets." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ── Hero ── */
+      .metal-hero {
+        position: relative;
+        background-image: url("battery-scrap.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 140px 11vw 100px;
+        color: #fff;
+      }
+      .metal-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, rgba(15,107,70,0.87) 0%, rgba(23,33,30,0.80) 100%);
+      }
+      .metal-hero > * { position: relative; }
+      .metal-hero .breadcrumb {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.55);
+        margin-bottom: 24px;
+      }
+      .metal-hero .breadcrumb a { color: #9fcf53; text-decoration: none; }
+      .metal-hero h1 {
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.08;
+        margin: 0 0 20px;
+        max-width: 660px;
+      }
+      .metal-hero p {
+        font-size: 1.1rem;
+        color: rgba(255,255,255,0.75);
+        max-width: 100%;
+        margin: 0;
+        line-height: 1.7;
+        white-space: nowrap;
+      }
+
+      /* ── Stats bar ── */
+      .metal-stats {
+        background: #17211e;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+      .metal-stat {
+        padding: 32px 28px;
+        border-right: 1px solid rgba(255,255,255,0.08);
+        text-align: center;
+      }
+      .metal-stat:last-child { border-right: none; }
+      .metal-stat strong {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: #9fcf53;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .metal-stat span {
+        font-size: 0.8rem;
+        color: rgba(255,255,255,0.55);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      /* ── Section base ── */
+      .metal-section {
+        padding: 80px 11vw;
+      }
+      .metal-section:nth-child(odd) { background: #fff; }
+      .metal-section:nth-child(even) { background: #f5f6ef; }
+
+      .section-header {
+        margin-bottom: 52px;
+      }
+      .section-header h2 {
+        font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+        font-weight: 900;
+        color: #17211e;
+        margin: 0 0 14px;
+        line-height: 1.15;
+      }
+      .section-header p {
+        font-size: 1rem;
+        color: #64726d;
+        line-height: 1.75;
+        max-width: 100%;
+        margin: 0;
+      }
+
+      /* ── Product grid ── */
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .product-card {
+        background: #fff;
+        border-radius: 12px;
+        border: 1.5px solid #dde4df;
+        padding: 28px 24px;
+        transition: box-shadow 0.2s, border-color 0.2s;
+      }
+      .metal-section:nth-child(even) .product-card { background: #fff; }
+      .product-card:hover {
+        box-shadow: 0 8px 32px rgba(15,107,70,0.1);
+        border-color: #9fcf53;
+      }
+      .card-img {
+        width: 100%;
+        aspect-ratio: 7 / 4;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        display: block;
+      }
+      .product-card h3 {
+        font-size: 1rem;
+        font-weight: 800;
+        color: #17211e;
+        margin: 0 0 10px;
+      }
+      .product-card .grade-tag {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #0f6b46;
+        background: #dceee5;
+        border-radius: 4px;
+        padding: 3px 8px;
+        margin-bottom: 12px;
+      }
+      .product-card.flagged .grade-tag {
+        color: #8a4b00;
+        background: #fdeccb;
+      }
+      .product-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .product-card ul li {
+        font-size: 0.88rem;
+        color: #3a4a44;
+        padding-left: 16px;
+        position: relative;
+        line-height: 1.5;
+      }
+      .product-card ul li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        color: #9fcf53;
+        font-weight: 700;
+      }
+
+      /* ── Grading standard (image + text) ── */
+      .product-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 80px;
+        padding: 96px 11vw;
+        background: #fff;
+      }
+      .product-img {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(23,33,30,0.14);
+      }
+      .product-img img {
+        width: 100%;
+        aspect-ratio: 8 / 5;
+        object-fit: cover;
+        display: block;
+      }
+      .product-img .img-badge {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        background: #0f6b46;
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 8px 16px;
+        border-radius: 6px;
+      }
+      .product-content .kicker {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #0f6b46;
+        margin: 0 0 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .product-content .kicker::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 2px;
+        background: #9fcf53;
+        border-radius: 2px;
+      }
+      .product-content h2 {
+        font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+        font-weight: 900;
+        color: #17211e;
+        margin: 0 0 18px;
+        line-height: 1.15;
+      }
+      .product-content p {
+        font-size: 1rem;
+        color: #64726d;
+        line-height: 1.75;
+        margin: 0;
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 1400px) {
+        .metal-hero p { white-space: normal; }
+      }
+      @media (max-width: 900px) {
+        .metal-stats { grid-template-columns: repeat(2, 1fr); }
+        .product-grid { grid-template-columns: repeat(2, 1fr); }
+        .metal-section { padding: 56px 6vw; }
+        .metal-hero { padding: 100px 6vw 70px; }
+      }
+      @media (max-width: 600px) {
+        .product-grid { grid-template-columns: 1fr; }
+        .metal-stats { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 860px) {
+        .product-section {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          padding: 64px 6vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Page transition loader -->
+    <div id="page-loader" aria-hidden="true">
+      <div class="loader-logo">
+        <img src="logo-icon-transparent.png" alt="MetGreen Global logo" />
+        <div class="loader-wordmark">
+          <strong>MetGreen</strong>
+          <small>Global</small>
+        </div>
+      </div>
+      <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
+    </div>
+
+    <header class="topbar">
+      <a class="logo" href="index.html" aria-label="Met Green Global home">
+        <img class="logo-mark" src="metgreen-logo-footer.png" alt="Met Green Global FZE" />
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="product.html" class="active-page">Product</a>
+        <a href="about.html">About</a>
+        <a class="nav-contact" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- Hero -->
+      <section class="metal-hero">
+        <p class="breadcrumb">
+          <a href="index.html">Home</a> &rsaquo;
+          <a href="product.html">Products</a> &rsaquo;
+          Battery
+        </p>
+        <h1>Battery</h1>
+        <p>Recycled lead-acid battery scrap sourced, sorted, and graded to strict intake standards, and traded across global recycling markets.</p>
+      </section>
+
+      <!-- Stats -->
+      <div class="metal-stats">
+        <div class="metal-stat">
+          <strong>Lead-Acid</strong>
+          <span>Core Battery Type</span>
+        </div>
+        <div class="metal-stat">
+          <strong>Drained</strong>
+          <span>Liquid-Free Intake Only</span>
+        </div>
+        <div class="metal-stat">
+          <strong>Global</strong>
+          <span>Trade Routes</span>
+        </div>
+        <div class="metal-stat">
+          <strong>100%</strong>
+          <span>Documented Supply</span>
+        </div>
+      </div>
+
+      <!-- Section: Grading Standard -->
+      <section class="product-section" id="battery-specs">
+        <div class="product-img">
+          <img src="battery-lead-acid.jpg" alt="Container filled with scrap lead-acid batteries ready for export" />
+          <span class="img-badge">ISRI Rains</span>
+        </div>
+        <div class="product-content">
+          <h2>Lead Scrap As Per ISRI Rains</h2>
+          <p>
+            To be free of any liquid. Cases to be either plastic or rubber and be complete including caps. Non-lead (nicad, ni-fe, carbonaire, etc.) not acceptable. Industrial, steel cased, aircraft (aluminum cased) and partial, cracked or broken batteries and batteries without caps subject to special agreement.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="logo" href="index.html" aria-label="Met Green Global home">
+            <img class="logo-mark" src="metgreen-logo-footer.png" alt="Met Green Global FZE" />
+          </a>
+          <p class="footer-tagline">Moving Materials. Building Futures.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li>MetGreen Global<br/>Global recycling &amp; commodity trading</li>
+            <li>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=metgreenglobalfze@gmail.com" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                metgreenglobalfze@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://metgreenglobal.com" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                metgreenglobal.com
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Let's Connect</h4>
+          <form class="footer-newsletter-form" onsubmit="return false;">
+            <input type="text" placeholder="Type your query" aria-label="Your query" />
+            <button type="submit" aria-label="Send query">
+              <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://wa.me/971554835509" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.28 2 2 8.28 2 16c0 2.46.67 4.88 1.95 7.02L2 30l7.18-1.88A13.94 13.94 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.5c-2.2 0-4.35-.6-6.22-1.72l-.45-.27-4.26 1.12 1.13-4.14-.3-.47A11.44 11.44 0 0 1 4.5 16C4.5 9.6 9.6 4.5 16 4.5S27.5 9.6 27.5 16 22.4 27.5 16 27.5zm6.27-8.55c-.34-.17-2.03-1-2.35-1.12-.32-.11-.55-.17-.78.17-.23.34-.9 1.12-1.1 1.35-.2.23-.4.26-.74.09-.34-.17-1.44-.53-2.74-1.69-1.01-.9-1.7-2.01-1.9-2.35-.2-.34-.02-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.78-1.88-1.07-2.57-.28-.67-.57-.58-.78-.59H9.8c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.42 3.7 5.87 5.19.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.13.66-.1 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.08-.14-.31-.23-.65-.4z"/></svg>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=metgreenglobalfze@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 MetGreen Global. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.querySelectorAll(".card-img").forEach(function(img) {
+        img.onerror = function() {
+          this.onerror = null;
+          this.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+          this.style.background = "linear-gradient(135deg, #dceee5 0%, #b5dd6a 100%)";
+        };
+      });
+    </script>
+  </body>
+</html>

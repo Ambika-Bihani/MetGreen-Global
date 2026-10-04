@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="About MetGreen Global — a trusted recycling and commodity trade partner for rubber, paper, and metal across global markets." />
+    <title>About Us | Met Green Global</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ── About page specific styles ── */
+      .about-hero {
+        background-image: url("hero-sustainability.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        padding: 120px 11vw 80px;
+        min-height: 340px;
+        display: flex;
+        align-items: flex-end;
+      }
+      .about-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, rgba(15,107,70,0.87) 0%, rgba(23,33,30,0.80) 100%);
+      }
+      .about-hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .about-hero-content .kicker {
+        color: var(--lime);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        margin: 0 0 12px;
+      }
+      .about-hero-content h1 {
+        color: #fff;
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin: 0;
+      }
+      .breadcrumb {
+        background: var(--sand);
+        padding: 14px 11vw;
+        font-size: 0.82rem;
+        color: var(--muted);
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .breadcrumb a { color: var(--green); text-decoration: none; }
+      .breadcrumb a:hover { text-decoration: underline; }
+      .breadcrumb span { color: var(--muted); }
+
+      /* ── Who we are ── */
+      .about-intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+        padding: 56px 11vw;
+        background: #fff;
+      }
+      .about-intro-media {
+        position: relative;
+      }
+      .about-intro-media img:first-child {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        filter: drop-shadow(0 28px 30px rgba(23, 33, 30, 0.3))
+          drop-shadow(0 8px 10px rgba(23, 33, 30, 0.18));
+      }
+      .about-intro-text .kicker {
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        margin: 0 0 12px;
+      }
+      .about-intro-text h2 {
+        font-size: clamp(32px, 4.6vw, 58px);
+        color: var(--ink);
+        margin: 0 0 24px;
+        line-height: 1.05;
+      }
+      .about-intro-text p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin: 0 0 20px;
+        font-size: 17px;
+      }
+
+      /* ── Stats bar ── */
+      .stats-bar {
+        background: #17211e;
+        padding: 56px 11vw;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        text-align: center;
+      }
+      .stat-item strong {
+        display: block;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 900;
+        color: var(--lime);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      .stat-item span {
+        font-size: 0.8rem;
+        color: rgba(255,255,255,0.55);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      /* ── Mission & Values ── */
+      .mission-section {
+        padding: 56px 11vw;
+        background: var(--sand);
+      }
+      .mission-section .kicker {
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        margin: 0 0 12px;
+      }
+      .mission-section h2 {
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        font-weight: 900;
+        color: var(--ink);
+        margin: 0 0 56px;
+      }
+      .mission-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+      .mission-card {
+        background: #fff;
+        border-radius: 6px;
+        padding: 36px 28px;
+        border-top: 4px solid var(--green);
+        box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+        cursor: pointer;
+        transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      }
+      .mission-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+      }
+      .mission-card.active {
+        background: var(--green);
+        border-top-color: var(--lime);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 36px rgba(15,107,70,0.35);
+      }
+      .mission-card .icon {
+        width: 48px;
+        height: 48px;
+        background: var(--green-2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        transition: background 0.3s ease;
+      }
+      .mission-card.active .icon {
+        background: rgba(255,255,255,0.15);
+      }
+      .mission-card .icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: var(--green);
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: stroke 0.3s ease;
+      }
+      .mission-card.active .icon svg {
+        stroke: var(--lime);
+      }
+      .mission-card h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin: 0 0 12px;
+        transition: color 0.3s ease;
+      }
+      .mission-card.active h3 {
+        color: #fff;
+      }
+      .mission-card p {
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 0.95rem;
+        margin: 0;
+        transition: color 0.3s ease;
+      }
+      .mission-card.active p {
+        color: rgba(255,255,255,0.82);
+      }
+
+      /* ── Why choose us ── */
+      .why-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        background: #fff;
+      }
+      .why-image {
+        min-height: 520px;
+        background-image:
+          linear-gradient(120deg, rgba(15,107,70,0.55) 0%, rgba(23,33,30,0.35) 100%),
+          url("tires-pile.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      .why-content {
+        padding: 80px 6vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .why-content .kicker {
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        margin: 0 0 12px;
+      }
+      .why-content h2 {
+        font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+        font-weight: 900;
+        color: var(--ink);
+        margin: 0 0 32px;
+        line-height: 1.2;
+      }
+      .why-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .why-list li {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        color: var(--muted);
+        line-height: 1.65;
+        font-size: 0.97rem;
+      }
+      .why-list li::before {
+        content: "";
+        display: block;
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        margin-top: 2px;
+        background: var(--green);
+        border-radius: 50%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+        background-size: 14px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      /* ── FAQ ── */
+      .faq-section {
+        padding: 96px 11vw;
+        background: var(--sand);
+      }
+      .faq-section .kicker {
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        margin: 0 0 12px;
+      }
+      .faq-section h2 {
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        font-weight: 900;
+        color: var(--ink);
+        margin: 0 0 48px;
+      }
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        max-width: 860px;
+      }
+      .faq-item {
+        border-bottom: 1px solid var(--line);
+      }
+      .faq-item summary {
+        padding: 22px 0;
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--ink);
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary::after {
+        content: "+";
+        font-size: 1.4rem;
+        color: var(--green);
+        flex-shrink: 0;
+        transition: transform 0.25s;
+      }
+      .faq-item[open] summary::after {
+        transform: rotate(45deg);
+      }
+      .faq-item p {
+        color: var(--muted);
+        line-height: 1.75;
+        margin: 0 0 22px;
+        font-size: 0.97rem;
+      }
+
+      /* ── Why cards section ── */
+      .why-cards-section {
+        padding: 36px 11vw;
+        background: #fff;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 28px;
+        column-gap: 64px;
+        align-items: start;
+      }
+      .why-cards-section h2 {
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        font-weight: 900;
+        color: var(--ink);
+        margin: 0 0 20px;
+        grid-column: 1 / -1;
+      }
+      .why-left { display: flex; flex-direction: column; }
+      .why-collage {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 12px;
+        height: 480px;
+      }
+      .why-collage img:first-child {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .why-collage img:last-child {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      @media (max-width: 900px) {
+        .why-cards-section {
+          grid-template-columns: 1fr;
+          padding: 44px 6vw;
+        }
+        .why-cards-section h2 { grid-column: 1; }
+        .why-collage { height: 300px; }
+      }
+      .why-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+      .why-accordion {
+        max-width: 860px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .why-acc-item {
+        background: var(--sand);
+        margin-bottom: 10px;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .why-acc-item summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px 24px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--ink);
+        cursor: pointer;
+        list-style: none;
+        gap: 16px;
+      }
+      .why-acc-item summary::-webkit-details-marker { display: none; }
+      .why-acc-item[open] summary {
+        background: #fff;
+        color: var(--green);
+        border-left: 4px solid var(--green);
+      }
+      .acc-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--green-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 1.1rem;
+        color: var(--green);
+        font-weight: 700;
+        transition: background 0.2s, transform 0.25s;
+      }
+      .why-acc-item[open] .acc-btn {
+        background: var(--green);
+        color: #fff;
+        transform: rotate(90deg);
+      }
+      .acc-body {
+        padding: 14px 24px 20px;
+        color: var(--muted);
+        line-height: 1.75;
+        font-size: 0.96rem;
+        background: #fff;
+        border-left: 4px solid var(--green);
+      }
+      @media (max-width: 900px) {
+        .why-cards-section { padding: 64px 6vw; }
+      }
+
+      /* ── FAQ split section ── */
+      .faq-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        background: var(--sand);
+      }
+      .faq-split-content {
+        padding: 96px 6vw 96px 11vw;
+      }
+      .faq-split-content .kicker {
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        margin: 0 0 12px;
+      }
+      .faq-split-content h2 {
+        font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+        font-weight: 900;
+        color: var(--ink);
+        margin: 0 0 40px;
+        line-height: 1.2;
+      }
+      .faq-split-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .faq-split-item {
+        border-bottom: 1px solid var(--line);
+        background: #fff;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .faq-split-item summary {
+        padding: 20px 24px;
+        font-weight: 600;
+        font-size: 0.97rem;
+        color: var(--ink);
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        background: var(--sand);
+      }
+      .faq-split-item[open] summary {
+        background: #fff;
+        color: var(--green);
+        border-left: 3px solid var(--green);
+      }
+      .faq-split-item summary::-webkit-details-marker { display: none; }
+      .faq-split-item summary .faq-arrow {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--green-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 1rem;
+        color: var(--green);
+        transition: background 0.2s, transform 0.25s;
+      }
+      .faq-split-item[open] summary .faq-arrow {
+        background: var(--green);
+        color: #fff;
+        transform: rotate(90deg);
+      }
+      .faq-split-item .faq-body {
+        padding: 16px 24px 20px;
+        color: var(--muted);
+        line-height: 1.75;
+        font-size: 0.95rem;
+        border-left: 3px solid var(--green);
+      }
+      .faq-split-images {
+        position: relative;
+        min-height: 500px;
+        overflow: hidden;
+      }
+      .faq-split-images img:first-child {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        width: 58%;
+        height: 55%;
+        object-fit: cover;
+        border-radius: 4px;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+      }
+      .faq-split-images img:last-child {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 58%;
+        height: 55%;
+        object-fit: cover;
+        border-radius: 4px;
+        box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+      }
+      .faq-split-images::before {
+        content: "";
+        position: absolute;
+        left: 44%;
+        top: 60px;
+        width: 4px;
+        height: 28%;
+        background: var(--green);
+        border-radius: 2px;
+      }
+      .faq-split-images::after {
+        content: "";
+        position: absolute;
+        right: 44%;
+        bottom: 60px;
+        width: 4px;
+        height: 28%;
+        background: var(--green);
+        border-radius: 2px;
+      }
+      @media (max-width: 900px) {
+        .faq-split { grid-template-columns: 1fr; }
+        .faq-split-content { padding: 64px 6vw; }
+        .faq-split-images { min-height: 340px; }
+      }
+
+      /* ── CTA strip ── */
+      .about-cta {
+        background: var(--green);
+        padding: 72px 11vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+      .about-cta h2 {
+        color: #fff;
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        font-weight: 900;
+        margin: 0;
+        line-height: 1.2;
+      }
+      .about-cta p {
+        color: rgba(255,255,255,0.7);
+        margin: 8px 0 0;
+        font-size: 0.97rem;
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 900px) {
+        .about-intro { grid-template-columns: 1fr; gap: 48px; padding: 44px 6vw; }
+        .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 48px 6vw; }
+        .mission-grid { grid-template-columns: 1fr; }
+        .why-section { grid-template-columns: 1fr; }
+        .why-image { min-height: 280px; }
+        .why-content { padding: 56px 6vw; }
+        .about-cta { flex-direction: column; align-items: flex-start; padding: 56px 6vw; }
+        .mission-section { padding: 44px 6vw; }
+        .faq-section { padding: 64px 6vw; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page transition loader -->
+    <div id="page-loader" aria-hidden="true">
+      <div class="loader-logo">
+        <img src="logo-icon-transparent.png" alt="MetGreen Global logo" />
+        <div class="loader-wordmark">
+          <strong>MetGreen</strong>
+          <small>Global</small>
+        </div>
+      </div>
+      <div class="loader-bar"></div>
+    </div>
+
+    <header class="topbar">
+      <a class="logo" href="index.html" aria-label="Met Green Global home">
+        <img class="logo-mark" src="metgreen-logo-footer.png" alt="Met Green Global FZE" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="about.html" class="active-page">About</a>
+        <a class="nav-contact" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero banner -->
+      <section class="about-hero">
+        <div class="about-hero-content">
+          <p class="kicker">Who we are</p>
+          <h1>About MetGreen Global</h1>
+        </div>
+      </section>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>About</span>
+      </div>
+
+      <!-- Who we are -->
+      <section class="about-intro">
+        <div class="about-intro-media">
+          <img
+            src="scrap-metal-pile.png"
+            alt="Large pile of assorted scrap metal ready for recycling"
+          />
+        </div>
+        <div class="about-intro-text">
+          <p class="kicker">About Company</p>
+          <h2>MetGreen Global</h2>
+          <p>
+            MetGreen Global is a trusted partner in the global recycling and commodity trade industry. We work alongside processors, manufacturers, mills, smelters, recycling yards, and logistics partners to ensure a seamless flow of recyclable materials across international borders.
+          </p>
+          <p>
+            Our core trading categories include ferrous and non-ferrous metals, recyclable rubber, and recovered paper. Each is handled with precision, verified documentation, and strict grade integrity from source to destination.
+          </p>
+          <p>
+            We operate with a strong emphasis on quality assurance, transparent communication, and long-term business relationships. Whether you require a one-time shipment or ongoing supply, our team delivers consistent, dependable service tailored to your trade requirements.
+          </p>
+        </div>
+      </section>
+
+      <!-- Stats bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <strong>10+</strong>
+          <span>Countries served</span>
+        </div>
+        <div class="stat-item">
+          <strong>20+</strong>
+          <span>Commodity Categories</span>
+        </div>
+        <div class="stat-item">
+          <strong>500+</strong>
+          <span>Shipments completed</span>
+        </div>
+        <div class="stat-item">
+          <strong>100%</strong>
+          <span>Documentation compliance</span>
+        </div>
+      </div>
+
+      <!-- Mission & Values -->
+      <section class="mission-section">
+        <p class="kicker">Our guiding principles</p>
+        <h2>Mission &amp; Values</h2>
+        <div class="mission-grid">
+          <div class="mission-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+            </div>
+            <h3>Our Mission</h3>
+            <p>To create long-term commercial and social value by connecting global recyclers with industrial buyers through dependable, compliant, and transparent trade channels.</p>
+          </div>
+          <div class="mission-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>Integrity First</h3>
+            <p>Every transaction we manage is built on honest pricing, accurate documentation, and clear communication from offer to delivery.</p>
+          </div>
+          <div class="mission-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83"/></svg>
+            </div>
+            <h3>Sustainability</h3>
+            <p>We believe recyclable material is a resource, not waste. Our work reduces landfill pressure, conserves raw material, and supports a circular economy at global scale.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why choose us -->
+      <!-- WHY SPLIT SECTION — commented out for later use
+      <section class="why-section">
+        <div class="why-image" aria-hidden="true"></div>
+        <div class="why-content">
+          <p class="kicker">Why choose us</p>
+          <h2>What sets MetGreen Global apart</h2>
+          <ul class="why-list">
+            <li>Verified supply partners — we work only with vetted yards, recyclers, and processors to ensure material quality and consistency.</li>
+            <li>End-to-end documentation — from inspection reports to shipping docs, compliance is handled at every step of the movement.</li>
+            <li>Flexible trade terms — we adapt payment and shipment structures to suit buyers and sellers across different markets.</li>
+            <li>Global logistics network — container planning, multi-port routing, and last-mile delivery coordination for smooth execution.</li>
+            <li>Responsive team — quick turnaround on offers, queries, and post-shipment support so deals close faster.</li>
+          </ul>
+        </div>
+      </section>
+      -->
+
+      <!-- Why choose us - cards -->
+      <section class="why-cards-section">
+        <h2>Why Choose MetGreen Global</h2>
+        <div class="why-left">
+        <div class="why-accordion">
+          <details class="why-acc-item">
+            <summary><span>Verified Partners</span><span class="acc-btn">›</span></summary>
+            <div class="acc-body">We work exclusively with vetted yards, recyclers, and processors to ensure consistent material quality and reliable supply chains.</div>
+          </details>
+          <details class="why-acc-item">
+            <summary><span>Full Documentation</span><span class="acc-btn">›</span></summary>
+            <div class="acc-body">Every shipment includes invoice, bill of lading, certificate of origin, inspection report, and all compliance docs for the destination country.</div>
+          </details>
+          <details class="why-acc-item">
+            <summary><span>Trade Compliance</span><span class="acc-btn">›</span></summary>
+            <div class="acc-body">Regulatory documentation is kept at the centre of every movement: we ensure every transaction meets import and export requirements.</div>
+          </details>
+          <details class="why-acc-item">
+            <summary><span>Global Network</span><span class="acc-btn">›</span></summary>
+            <div class="acc-body">Container planning, multi-port routing, and last-mile delivery coordination across 12+ countries for smooth, on-time execution.</div>
+          </details>
+          <details class="why-acc-item">
+            <summary><span>Responsive Team</span><span class="acc-btn">›</span></summary>
+            <div class="acc-body">Quick turnaround on offers, queries, and post-shipment support: our team ensures deals close efficiently with minimal back-and-forth.</div>
+          </details>
+          <details class="why-acc-item">
+            <summary><span>Flexible Terms</span><span class="acc-btn">›</span></summary>
+            <div class="acc-body">We adapt payment and shipment structures to suit buyers and sellers across different markets, making every trade workable for both sides.</div>
+          </details>
+        </div>
+        </div>
+        <div class="why-collage">
+          <img
+            src="scrap-iron.jpg"
+            alt="Scrap iron metal background"
+          />
+          <img
+            src="tire-rubber-closeup.jpg"
+            alt="Scrap tires pile in recycling yard"
+          />
+        </div>
+      </section>
+
+      <!-- CTA strip -->
+      <div class="about-cta">
+        <div>
+          <h2>Ready to start trading with us?</h2>
+          <p>Share your requirements and our team will respond with the next steps.</p>
+        </div>
+        <a class="btn light" href="index.html#contact">Send your enquiry</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="logo" href="index.html" aria-label="Met Green Global home">
+            <img class="logo-mark" src="metgreen-logo-footer.png" alt="Met Green Global FZE" />
+          </a>
+          <p class="footer-tagline">Moving Materials. Building Futures.</p>
+        </div>
+
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li>MetGreen Global<br/>Global recycling &amp; commodity trading</li>
+            <li>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=metgreenglobalfze@gmail.com" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                metgreenglobalfze@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://metgreenglobal.com" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                metgreenglobal.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Let's Connect</h4>
+          <form class="footer-newsletter-form" onsubmit="return false;">
+            <input type="text" placeholder="Type your query" aria-label="Your query" />
+            <button type="submit" aria-label="Send query">
+              <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://wa.me/971554835509" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.28 2 2 8.28 2 16c0 2.46.67 4.88 1.95 7.02L2 30l7.18-1.88A13.94 13.94 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.5c-2.2 0-4.35-.6-6.22-1.72l-.45-.27-4.26 1.12 1.13-4.14-.3-.47A11.44 11.44 0 0 1 4.5 16C4.5 9.6 9.6 4.5 16 4.5S27.5 9.6 27.5 16 22.4 27.5 16 27.5zm6.27-8.55c-.34-.17-2.03-1-2.35-1.12-.32-.11-.55-.17-.78.17-.23.34-.9 1.12-1.1 1.35-.2.23-.4.26-.74.09-.34-.17-1.44-.53-2.74-1.69-1.01-.9-1.7-2.01-1.9-2.35-.2-.34-.02-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.78-1.88-1.07-2.57-.28-.67-.57-.58-.78-.59H9.8c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.42 3.7 5.87 5.19.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.13.66-.1 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.08-.14-.31-.23-.65-.4z"/></svg>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=metgreenglobalfze@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 MetGreen Global. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".mission-card").forEach(card => {
+        card.addEventListener("click", () => {
+          card.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
